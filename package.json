@@ -1,0 +1,7 @@
+{
+    "name": "jsonpath-ts",
+    "dependencies": {},
+    "devDependencies": {
+        "vitest": "^1.4.0"
+    }
+}
