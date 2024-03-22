@@ -1,6 +1,8 @@
 # JSONPath Typescript
 
-Type inference for json path queries.
+Type-level implemntation of JSONPath queries.
+
+As per the [JSONPath query expressions RFC](https://www.rfc-editor.org/rfc/rfc9535.txt) (partial support).
 
 ## Usage
 
