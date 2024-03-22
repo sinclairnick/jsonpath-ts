@@ -1,9 +1,8 @@
 # JSONPath Typescript
 
 ![](https://img.shields.io/npm/v/jsonpath-ts)
-![](https://img.shields.io/bundlejs/size/jsonpath-ts)
 
-Type inference for JSONPath queries, as per the [JSONPath query expressions RFC](https://www.rfc-editor.org/rfc/rfc9535.txt) (see limitations below).
+Type inference for JSONPath queries, as per [RFC 9535: JSONPath: Query Expressions for JSON](https://www.rfc-editor.org/rfc/rfc9535.txt) (see limitations below).
 
 ```
 npm i jsonpath-ts
