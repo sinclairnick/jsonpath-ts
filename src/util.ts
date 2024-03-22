@@ -15,12 +15,6 @@ export type FormatString<T extends string> = "" extends T
   : StripQuotes<StripWhitespace<T>>;
 export type NonZeroDigit = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
 export type Digit = NonZeroDigit | 0;
-// Limited to 9999
-export type AnyNumberStr =
-  | `${Digit}`
-  | `${NonZeroDigit}${Digit}`
-  | `${NonZeroDigit}${Digit}${Digit}`
-  | `${NonZeroDigit}${Digit}${Digit}${Digit}`;
 
 export type PickArray<
   TIndex extends number,
