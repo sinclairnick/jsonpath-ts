@@ -48,3 +48,9 @@ export type Data = {
 type Result = Parse<"$.store.book[*].author[2:6]", Data>;
 //	 ^? ["Herman Melville", "J. R. R. Tolkien"]
 ```
+
+## Limitations
+
+-   Slice steps not supported (`::-1`)
+-   Filtering not supported (`?@.hasField`)
+-   Descendant segments not supported (`$...X`)
