@@ -8,3 +8,5 @@ export type Parse<
   TPath extends `$${string}`,
   TValue extends any
 > = ExtractValue<ParsePath<TPath>, TValue>;
+
+export default {};

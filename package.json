@@ -1,5 +1,5 @@
 {
-  "version": "0.0.1",
+  "version": "0.1.0",
   "name": "jsonpath-ts",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
@@ -16,10 +16,13 @@
     "build": "tsup",
     "publish-pkg": "npm run build && npm publish --access=public"
   },
-  "dependencies": { "jsonpath-ts": "^0.0.1" },
+  "dependencies": {
+    "jsonpath-ts": "^0.0.1"
+  },
   "devDependencies": {
-    "vitest": "^1.4.0",
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "tsup": "^8.0.2",
+    "vitest": "^1.4.0"
   },
   "type": "module",
   "peerDependencies": {

@@ -3,9 +3,6 @@ type AnyArray = any[];
 type StripWhitespace<T extends string> = T extends ` ${infer TRest}` ? StripWhitespace<TRest> : T extends `${infer TRest} ` ? StripWhitespace<TRest> : T;
 type StripQuotes<T extends string> = T extends `'${infer TValue}'` ? TValue : T extends `"${infer TValue}"` ? TValue : T;
 type FormatString<T extends string> = "" extends T ? never : StripQuotes<StripWhitespace<T>>;
-type NonZeroDigit = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
-type Digit = NonZeroDigit | 0;
-type AnyNumberStr = `${Digit}` | `${NonZeroDigit}${Digit}` | `${NonZeroDigit}${Digit}${Digit}` | `${NonZeroDigit}${Digit}${Digit}${Digit}`;
 type PickArray<TIndex extends number, TArray extends any[]> = TArray["length"] extends 0 ? never : TArray extends [...infer TRest, infer TLast] ? TIndex extends TRest["length"] ? TLast : PickArray<TIndex, TRest> : never;
 type ToPositive<N extends number, Arr extends unknown[]> = `${N}` extends `-${infer P extends number}` ? Slice<Arr, P>["length"] : N;
 type InitialN<Arr extends unknown[], N extends number, _Acc extends unknown[] = []> = _Acc["length"] extends N | Arr["length"] ? _Acc : InitialN<Arr, N, [..._Acc, Arr[_Acc["length"]]]>;
@@ -58,5 +55,6 @@ type ExtractSelection<TSelector extends AnySelector | AnySelector[], TValue exte
 type ExtractValue<TSelectors extends AnyParsedPath, TValue extends any> = TSelectors["length"] extends 0 ? TValue : TSelectors extends [infer TFirst, ...infer TRest] ? TFirst extends AnySelector | AnySelector[] ? TRest extends AnyParsedPath ? ExtractValue<TRest, ExtractSelection<TFirst, TValue>> : ExtractSelection<TFirst, TValue> : [] : [];
 
 type Parse<TPath extends `$${string}`, TValue extends any> = ExtractValue<ParsePath<TPath>, TValue>;
+declare const _default: {};
 
-export type { AnyArray, AnyIndexSelector, AnyNameSelector, AnyNumberStr, AnyParsedPath, AnyRecord, AnySelector, AnySliceSelector, AnyWildcardSelector, ArraySliceSelector, Digit, ExtractArraySelection, ExtractMultipleArraySelections, ExtractRecordSelection, ExtractSelection, ExtractValue, FormatString, IndexSelector, NameSelector, NonZeroDigit, OrDefault, Parse, ParseBracketIndexInner, ParseBracketSelector, ParsePath, ParsePathInner, PickArray, PickArrayField, Slice, StripQuotes, StripWhitespace, WildcardSelector };
+export { type AnyIndexSelector, type AnyNameSelector, type AnyParsedPath, type AnySelector, type AnySliceSelector, type AnyWildcardSelector, type ArraySliceSelector, type ExtractArraySelection, type ExtractMultipleArraySelections, type ExtractRecordSelection, type ExtractSelection, type ExtractValue, type IndexSelector, type NameSelector, type Parse, type ParseBracketIndexInner, type ParseBracketSelector, type ParsePath, type ParsePathInner, type WildcardSelector, _default as default };
