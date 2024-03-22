@@ -1,7 +1,28 @@
 {
-    "name": "jsonpath-ts",
-    "dependencies": {},
-    "devDependencies": {
-        "vitest": "^1.4.0"
+  "version": "0.0.1",
+  "name": "jsonpath-ts",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "default": "./dist/index.cjs",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
     }
+  },
+  "scripts": {
+    "build": "tsup",
+    "publish-pkg": "npm run build && npm publish --access=public"
+  },
+  "dependencies": { "jsonpath-ts": "^0.0.1" },
+  "devDependencies": {
+    "vitest": "^1.4.0",
+    "@types/bun": "latest"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
 }
